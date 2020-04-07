@@ -1,2 +1,2 @@
-# Initial page
+# Dive-into-Redis
 
