@@ -8,9 +8,9 @@ redis-cli
 
 我们可以看到命令提示符已经改变
 
-![](.gitbook/assets/image%20%286%29.png)
+![](.gitbook/assets/image%20%287%29.png)
 
 我们来看一下redis的信息，在终端输入`info`
 
-![](.gitbook/assets/image%20%2822%29.png)
+![](.gitbook/assets/image%20%2823%29.png)
 

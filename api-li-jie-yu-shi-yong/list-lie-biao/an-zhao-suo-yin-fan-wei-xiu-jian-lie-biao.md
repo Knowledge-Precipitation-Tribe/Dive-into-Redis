@@ -6,5 +6,5 @@ ltrim key start end
 
 例如，下面操作会只保留列表mylist第2个到第4个元素：
 
-![](../../.gitbook/assets/image%20%2878%29.png)
+![](../../.gitbook/assets/image%20%2879%29.png)
 
