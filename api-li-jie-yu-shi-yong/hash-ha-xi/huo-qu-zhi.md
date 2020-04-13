@@ -6,5 +6,5 @@ hget key field
 
 获取user:1的name，如果键或field不存在，会返回nil：
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
