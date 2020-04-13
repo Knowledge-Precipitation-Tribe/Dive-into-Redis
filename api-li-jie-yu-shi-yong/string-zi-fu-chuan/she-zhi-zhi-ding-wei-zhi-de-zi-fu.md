@@ -6,5 +6,5 @@ setrange key offeset value
 
 修改字符串内容
 
-![](../../.gitbook/assets/image%20%2831%29.png)
+![](../../.gitbook/assets/image%20%2838%29.png)
 
