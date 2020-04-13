@@ -47,6 +47,13 @@
   * [获取列表指定索引下标的元素](api-li-jie-yu-shi-yong/list-lie-biao/huo-qu-lie-biao-zhi-ding-suo-yin-xia-biao-de-yuan-su.md)
   * [获取列表长度](api-li-jie-yu-shi-yong/list-lie-biao/huo-qu-lie-biao-chang-du.md)
   * [从列表左侧弹出元素](api-li-jie-yu-shi-yong/list-lie-biao/cong-lie-biao-zuo-ce-tan-chu-yuan-su.md)
+  * [从列表右侧弹出元素](api-li-jie-yu-shi-yong/list-lie-biao/cong-lie-biao-you-ce-tan-chu-yuan-su.md)
+  * [删除指定元素](api-li-jie-yu-shi-yong/list-lie-biao/shan-chu-zhi-ding-yuan-su.md)
+  * [按照索引范围修剪列表](api-li-jie-yu-shi-yong/list-lie-biao/an-zhao-suo-yin-fan-wei-xiu-jian-lie-biao.md)
+  * [修改元素](api-li-jie-yu-shi-yong/list-lie-biao/xiu-gai-yuan-su.md)
+  * [阻塞操作](api-li-jie-yu-shi-yong/list-lie-biao/zu-sai-cao-zuo.md)
+  * [列表命令总结](api-li-jie-yu-shi-yong/list-lie-biao/lie-biao-ming-ling-zong-jie.md)
+  * [使用场景](api-li-jie-yu-shi-yong/list-lie-biao/shi-yong-chang-jing.md)
 * [set\(集合\)](api-li-jie-yu-shi-yong/set-ji-he.md)
 * [zset\(有序集合\)](api-li-jie-yu-shi-yong/zset-you-xu-ji-he.md)
 

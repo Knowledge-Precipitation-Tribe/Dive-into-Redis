@@ -4,5 +4,7 @@
 lpop key
 ```
 
+如下操作将列表最左侧的元素c会被弹出
 
+![](../../.gitbook/assets/image%20%2834%29.png)
 

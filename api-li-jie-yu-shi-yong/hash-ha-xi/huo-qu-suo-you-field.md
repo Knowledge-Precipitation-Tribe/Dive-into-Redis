@@ -6,5 +6,5 @@ hkeys key
 
 它返回指定哈希键所有的field，例如：
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image%20%287%29.png)
 

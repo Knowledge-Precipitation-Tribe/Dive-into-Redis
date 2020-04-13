@@ -6,5 +6,5 @@ lindex key index
 
 例如当前列表最后一个元素为a：
 
-![](../../.gitbook/assets/image%20%2841%29.png)
+![](../../.gitbook/assets/image%20%2846%29.png)
 

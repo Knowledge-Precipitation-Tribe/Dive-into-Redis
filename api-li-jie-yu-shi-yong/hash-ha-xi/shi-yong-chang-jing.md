@@ -4,11 +4,11 @@
 
 ### 关系型数据库保存信息
 
-![](../../.gitbook/assets/image%20%2818%29.png)
+![](../../.gitbook/assets/image%20%2820%29.png)
 
 ### 哈希存储信息
 
-![](../../.gitbook/assets/image%20%2845%29.png)
+![](../../.gitbook/assets/image%20%2852%29.png)
 
 但是需要注意的是哈希类型和关系型数据库有两点不同之处：
 
