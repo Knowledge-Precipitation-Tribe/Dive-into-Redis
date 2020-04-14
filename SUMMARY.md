@@ -96,6 +96,11 @@
 * [事务与Lua](jin-jie-gong-neng/shi-wu-yu-lua/README.md)
   * [事务](jin-jie-gong-neng/shi-wu-yu-lua/shi-wu.md)
   * [Lua用法简述](jin-jie-gong-neng/shi-wu-yu-lua/lua-yong-fa-jian-shu.md)
+* [Bitmap](jin-jie-gong-neng/bitmap.md)
+* [发布订阅](jin-jie-gong-neng/fa-bu-ding-yue/README.md)
+  * [命令](jin-jie-gong-neng/fa-bu-ding-yue/ming-ling.md)
+  * [使用场景](jin-jie-gong-neng/fa-bu-ding-yue/shi-yong-chang-jing.md)
+* [GEO](jin-jie-gong-neng/geo.md)
 
 ## 集群操作
 
