@@ -12,7 +12,8 @@
 
 ## API理解与使用
 
-* [全局命令](api-li-jie-yu-shi-yong/quan-ju-ming-ling.md)
+* [全局命令1](api-li-jie-yu-shi-yong/quan-ju-ming-ling.md)
+* [全局命令2](api-li-jie-yu-shi-yong/quan-ju-ming-ling-2.md)
 * [string\(字符串\)](api-li-jie-yu-shi-yong/string-zi-fu-chuan/README.md)
   * [设置值](api-li-jie-yu-shi-yong/string-zi-fu-chuan/she-zhi-zhi.md)
   * [获取值](api-li-jie-yu-shi-yong/string-zi-fu-chuan/huo-qu-zhi.md)
@@ -84,6 +85,17 @@
   * [并集](api-li-jie-yu-shi-yong/zset-you-xu-ji-he/bing-ji.md)
   * [有序集合命令总结](api-li-jie-yu-shi-yong/zset-you-xu-ji-he/you-xu-ji-he-ming-ling-zong-jie.md)
   * [使用场景](api-li-jie-yu-shi-yong/zset-you-xu-ji-he/shi-yong-chang-jing.md)
+
+## 进阶功能
+
+* [慢查询分析](jin-jie-gong-neng/man-cha-xun-fen-xi/README.md)
+  * [最佳实践](jin-jie-gong-neng/man-cha-xun-fen-xi/zui-jia-shi-jian.md)
+* [Pipeline](jin-jie-gong-neng/pipeline/README.md)
+  * [原生批量命令与Pipeline对比](jin-jie-gong-neng/pipeline/yuan-sheng-pi-liang-ming-ling-yu-pipeline-dui-bi.md)
+  * [最佳实践](jin-jie-gong-neng/pipeline/zui-jia-shi-jian.md)
+* [事务与Lua](jin-jie-gong-neng/shi-wu-yu-lua/README.md)
+  * [事务](jin-jie-gong-neng/shi-wu-yu-lua/shi-wu.md)
+  * [Lua用法简述](jin-jie-gong-neng/shi-wu-yu-lua/lua-yong-fa-jian-shu.md)
 
 ## 集群操作
 

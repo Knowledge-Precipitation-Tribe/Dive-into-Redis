@@ -6,5 +6,5 @@ hvals key
 
 获取user：1全部value：
 
-![](../../.gitbook/assets/image%20%2845%29.png)
+![](../../.gitbook/assets/image%20%2849%29.png)
 
