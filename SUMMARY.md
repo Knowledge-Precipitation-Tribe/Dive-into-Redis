@@ -102,6 +102,13 @@
   * [使用场景](jin-jie-gong-neng/fa-bu-ding-yue/shi-yong-chang-jing.md)
 * [GEO](jin-jie-gong-neng/geo.md)
 
+## 持久化
+
+* [持久化](chi-jiu-hua/chi-jiu-hua/README.md)
+  * [RDB](chi-jiu-hua/chi-jiu-hua/rdb.md)
+  * [AOF](chi-jiu-hua/chi-jiu-hua/aof.md)
+  * [问题定位与优化](chi-jiu-hua/chi-jiu-hua/wen-ti-ding-wei-yu-you-hua.md)
+
 ## 集群操作
 
 * [集群简介](ji-qun-cao-zuo/ji-qun-jian-jie.md)

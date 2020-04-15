@@ -6,5 +6,5 @@ llen key
 
 例如，mylist当前列表长度为7：
 
-![](../../.gitbook/assets/image%20%2823%29.png)
+![](../../.gitbook/assets/image%20%2824%29.png)
 
