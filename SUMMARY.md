@@ -104,12 +104,19 @@
 
 ## 持久化
 
-* [持久化](chi-jiu-hua/chi-jiu-hua/README.md)
-  * [RDB](chi-jiu-hua/chi-jiu-hua/rdb.md)
-  * [AOF](chi-jiu-hua/chi-jiu-hua/aof.md)
-  * [问题定位与优化](chi-jiu-hua/chi-jiu-hua/wen-ti-ding-wei-yu-you-hua.md)
+* [持久化](chi-jiu-hua/chi-jiu-hua.md)
+* [AOF](chi-jiu-hua/aof.md)
+* [RDB](chi-jiu-hua/rdb.md)
+* [问题定位与优化](chi-jiu-hua/wen-ti-ding-wei-yu-you-hua.md)
+* [多实例部署](chi-jiu-hua/duo-shi-li-bu-shu.md)
+
+## 复制
+
+* [复制](fu-zhi/fu-zhi.md)
+* [配置](fu-zhi/pei-zhi.md)
 
 ## 集群操作
 
 * [集群简介](ji-qun-cao-zuo/ji-qun-jian-jie.md)
+* [常见问题](chang-jian-wen-ti-1.md)
 
