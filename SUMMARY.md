@@ -114,6 +114,8 @@
 
 * [复制](fu-zhi/fu-zhi.md)
 * [配置](fu-zhi/pei-zhi.md)
+* [拓扑](fu-zhi/tuo-pu.md)
+* [原理](fu-zhi/yuan-li.md)
 
 ## 集群操作
 

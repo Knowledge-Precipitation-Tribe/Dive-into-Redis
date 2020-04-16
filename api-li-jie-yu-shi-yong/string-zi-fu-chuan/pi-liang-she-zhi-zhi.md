@@ -6,5 +6,5 @@ mset key value [key value ...]
 
 下面操作通过mset命令一次性设置3个键值对：
 
-![](../../.gitbook/assets/image%20%2839%29.png)
+![](../../.gitbook/assets/image%20%2840%29.png)
 
