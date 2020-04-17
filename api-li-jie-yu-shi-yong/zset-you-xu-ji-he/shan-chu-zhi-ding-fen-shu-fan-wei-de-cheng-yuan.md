@@ -6,5 +6,5 @@ zremrangebyscore key min max
 
 下面操作将250分以上的成员全部删除，返回结果为成功删除的个数：
 
-![](../../.gitbook/assets/image%20%2842%29.png)
+![](../../.gitbook/assets/image%20%2843%29.png)
 
