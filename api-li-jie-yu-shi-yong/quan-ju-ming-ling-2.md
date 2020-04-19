@@ -27,7 +27,7 @@ keys命令支持pattern匹配
 
 Redis从2.8版本后，提供了一个新的命令scan，它能有效的解决keys命令存在的问题。和keys命令执行时会遍历所有键不同，scan采用渐进式遍历的方式来解决keys命令可能带来的阻塞问题，每次scan命令的时间复杂度是 O\(1\)，但是要真正实现keys的功能，需要执行多次scan。Redis存储键值对实际使用的是hashtable的数据结构，其简化模型如图所示。
 
-![](../.gitbook/assets/image%20%2857%29.png)
+![](../.gitbook/assets/image%20%2858%29.png)
 
 那么每次执行scan，可以想象成只扫描一个字典中的一部分键，直到将 字典中的所有键遍历完毕。scan的使用方法如下：
 
@@ -41,7 +41,7 @@ scan cursor [match pattern] [count number]
 
 现有一个Redis有22个键，现在要遍历所有的键，使用scan命令效果的操作如下。第一次执行scan 0，返回结果分为两个部分：第一个部分30就是下次scan需要的cursor，第二个部分是10个键：
 
-![](../.gitbook/assets/image%20%2856%29.png)
+![](../.gitbook/assets/image%20%2857%29.png)
 
 使用新的cursor="30"，执行scan 30：
 

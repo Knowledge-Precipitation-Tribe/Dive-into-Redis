@@ -116,6 +116,7 @@
 * [配置](fu-zhi/pei-zhi.md)
 * [拓扑](fu-zhi/tuo-pu.md)
 * [原理](fu-zhi/yuan-li.md)
+* [开发与运维中的问题](fu-zhi/kai-fa-yu-yun-wei-zhong-de-wen-ti.md)
 
 ## 集群操作
 
