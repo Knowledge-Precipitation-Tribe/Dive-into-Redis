@@ -116,7 +116,19 @@
 * [配置](fu-zhi/pei-zhi.md)
 * [拓扑](fu-zhi/tuo-pu.md)
 * [原理](fu-zhi/yuan-li.md)
-* [开发与运维中的问题](fu-zhi/kai-fa-yu-yun-wei-zhong-de-wen-ti.md)
+* [开发与运维中的问题](fu-zhi/kai-fa-yu-yun-wei-zhong-de-wen-ti/README.md)
+  * [读写分离](fu-zhi/kai-fa-yu-yun-wei-zhong-de-wen-ti/du-xie-fen-li.md)
+  * [主从配置不一致](fu-zhi/kai-fa-yu-yun-wei-zhong-de-wen-ti/zhu-cong-pei-zhi-bu-yi-zhi.md)
+  * [规避全量复制](fu-zhi/kai-fa-yu-yun-wei-zhong-de-wen-ti/gui-bi-quan-liang-fu-zhi.md)
+  * [规避复制风暴](fu-zhi/kai-fa-yu-yun-wei-zhong-de-wen-ti/gui-bi-fu-zhi-feng-bao.md)
+
+## 阻塞
+
+* [阻塞](zu-sai/zu-sai.md)
+
+## 内存
+
+* [理解内存](nei-cun/li-jie-nei-cun.md)
 
 ## 集群操作
 

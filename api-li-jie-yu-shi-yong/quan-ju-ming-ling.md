@@ -13,7 +13,7 @@ set what redis
 keys *
 ```
 
-![](../.gitbook/assets/image%20%2880%29.png)
+![](../.gitbook/assets/image%20%2885%29.png)
 
 ### 2. 键总数
 
@@ -23,7 +23,7 @@ dbsize
 
 dbsize命令会返回当前数据库中键的总数。例如当前数据库有4个键， 分别是hello、what所以dbsize的结果是2
 
-![](../.gitbook/assets/image%20%2889%29.png)
+![](../.gitbook/assets/image%20%2894%29.png)
 
 dbsize命令在计算键总数时不会遍历所有键，而是直接获取Redis内置的 键总数变量，所以dbsize命令的时间复杂度是O\(1\)。而keys命令会遍历所 有键，所以它的时间复杂度是O\(n\)，当Redis保存了大量键时，线上环境禁止使用。
 
@@ -35,7 +35,7 @@ exists key [key ...]
 
 如果键存在则返回1，不存在则返回0：
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2823%29.png)
 
 ### 4. 删除键
 
@@ -45,7 +45,7 @@ del key [key ...]
 
 del是一个通用命令，无论值是什么数据结构类型，del命令都可以将其 删除，例如下面将字符串类型的键hello删除：
 
-![](../.gitbook/assets/image%20%2830%29.png)
+![](../.gitbook/assets/image%20%2833%29.png)
 
 返回结果为成功删除键的个数，假设删除一个不存在的键，就会返回0
 
@@ -68,7 +68,7 @@ ttl命令会返回键的剩余过期时间，它有3种返回值：
 * -1：键没设置过期时间。
 * ·-2：键不存在
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](../.gitbook/assets/image%20%2826%29.png)
 
 #### 注意
 

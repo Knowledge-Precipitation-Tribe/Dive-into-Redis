@@ -6,9 +6,9 @@ get key
 
 获取键hello的值
 
-![](../../.gitbook/assets/image%20%2846%29.png)
+![](../../.gitbook/assets/image%20%2850%29.png)
 
 如果要获取的键不存在，则返回nil
 
-![](../../.gitbook/assets/image%20%2848%29.png)
+![](../../.gitbook/assets/image%20%2852%29.png)
 
