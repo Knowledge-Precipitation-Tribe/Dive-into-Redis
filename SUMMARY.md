@@ -125,6 +125,9 @@
 ## 阻塞
 
 * [阻塞](zu-sai/zu-sai.md)
+* [发现阻塞](zu-sai/fa-xian-zu-sai.md)
+* [内在原因](zu-sai/nei-zai-yuan-yin.md)
+* [外在原因](zu-sai/wai-zai-yuan-yin.md)
 
 ## 内存
 

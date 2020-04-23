@@ -6,5 +6,5 @@ zcount key min max
 
 下面操作返回200到221分的成员的个数：
 
-![](../../.gitbook/assets/image%20%2866%29.png)
+![](../../.gitbook/assets/image%20%2870%29.png)
 

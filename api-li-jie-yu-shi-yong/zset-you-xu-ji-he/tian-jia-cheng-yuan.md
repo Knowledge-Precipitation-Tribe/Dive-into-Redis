@@ -6,7 +6,7 @@ zadd key score member [score member ...]
 
 下面操作向有序集合user:ranking添加用户tom和他的分数251：
 
-![](../../.gitbook/assets/image%20%2876%29.png)
+![](../../.gitbook/assets/image%20%2880%29.png)
 
 返回结果代表成功添加成员的个数，Redis为zadd命令添加了nx、xx、ch、incr四个选项：
 
