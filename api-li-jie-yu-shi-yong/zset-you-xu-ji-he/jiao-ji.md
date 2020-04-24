@@ -2,7 +2,7 @@
 
 我们现在创建两个有序集合
 
-![](../../.gitbook/assets/image%20%2886%29.png)
+![](../../.gitbook/assets/image%20%2888%29.png)
 
 ![](../../.gitbook/assets/image%20%286%29.png)
 
@@ -22,5 +22,5 @@ zinterstore destination numkeys key [key ...] [weights weight [weight ...]] [agg
 
 下面操作对user:ranking:1和user:ranking:2做交集，weights和aggregate使用了默认配置，可以看到目标键user:ranking:1\_inter\_2对分值做了sum操作：
 
-![](../../.gitbook/assets/image%20%28106%29.png)
+![](../../.gitbook/assets/image%20%28111%29.png)
 

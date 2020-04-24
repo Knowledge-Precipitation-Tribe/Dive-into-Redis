@@ -13,7 +13,7 @@ set what redis
 keys *
 ```
 
-![](../.gitbook/assets/image%20%28107%29.png)
+![](../.gitbook/assets/image%20%28112%29.png)
 
 ### 2. 键总数
 
@@ -23,7 +23,7 @@ dbsize
 
 dbsize命令会返回当前数据库中键的总数。例如当前数据库有4个键， 分别是hello、what所以dbsize的结果是2
 
-![](../.gitbook/assets/image%20%28118%29.png)
+![](../.gitbook/assets/image%20%28123%29.png)
 
 dbsize命令在计算键总数时不会遍历所有键，而是直接获取Redis内置的 键总数变量，所以dbsize命令的时间复杂度是O\(1\)。而keys命令会遍历所 有键，所以它的时间复杂度是O\(n\)，当Redis保存了大量键时，线上环境禁止使用。
 
