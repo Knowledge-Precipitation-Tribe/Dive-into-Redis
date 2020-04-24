@@ -2,7 +2,7 @@
 
 在从节点执行slaveof命令后，复制过程便开始运作，下面详细介绍建立 复制的完整流程，如图所示。
 
-![](../.gitbook/assets/image%20%2844%29.png)
+![](../.gitbook/assets/image%20%2853%29.png)
 
 从图中可以看出复制过程大致分为6个过程：
 
@@ -29,7 +29,7 @@ fd=5 name= age=11 idle=0 flags=N db=0 sub=0 psub=0 multi=-1 qbuf=0 qbuf-free= 32
 
 从节点（slave）内部通过每秒运行的定时任务维护复制相关逻辑， 当定时任务发现存在新的主节点后，会尝试与该节点建立网络连接，如图所示。
 
-![](../.gitbook/assets/image%20%2876%29.png)
+![](../.gitbook/assets/image%20%2889%29.png)
 
 从节点会建立一个socket套接字，例如图6-8中从节点建立了一个端口为 24555的套接字，专门用于接受主节点发送的复制命令。从节点连接成功后打印如下日志：
 
@@ -40,7 +40,7 @@ fd=5 name= age=11 idle=0 flags=N db=0 sub=0 psub=0 multi=-1 qbuf=0 qbuf-free= 32
 
 如果从节点无法建立连接，定时任务会无限重试直到连接成功或者执行 slaveof no one取消复制，如图所示。
 
-![](../.gitbook/assets/image%20%28125%29.png)
+![](../.gitbook/assets/image%20%28148%29.png)
 
 关于连接失败，可以在从节点执行info replication查看 master\_link\_down\_since\_seconds指标，它会记录与主节点连接失败的系统时间。从节点连接主节点失败时也会每秒打印如下日志，方便运维人员发现问 题：
 
@@ -57,7 +57,7 @@ fd=5 name= age=11 idle=0 flags=N db=0 sub=0 psub=0 multi=-1 qbuf=0 qbuf-free= 32
 
 如果发送ping命令后，从节点没有收到主节点的pong回复或者超时，比如网络超时或者主节点正在阻塞无法响应命令，从节点会断开复制连接，下次定时任务会发起重连，如图所示。
 
-![](../.gitbook/assets/image%20%2838%29.png)
+![](../.gitbook/assets/image%20%2843%29.png)
 
 从节点发送的ping命令成功返回，Redis打印如下日志，并继续后续复制流程：
 

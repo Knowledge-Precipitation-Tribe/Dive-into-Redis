@@ -6,7 +6,7 @@ getrange key start end
 
 获取redis对应的值的前两位
 
-![](../../.gitbook/assets/image%20%2840%29.png)
+![](../../.gitbook/assets/image%20%2846%29.png)
 
 
 

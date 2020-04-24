@@ -6,5 +6,5 @@ zremrangebyrank key start end
 
 下面操作删除第start到第end名的成员：
 
-![](../../.gitbook/assets/image%20%2875%29.png)
+![](../../.gitbook/assets/image%20%2888%29.png)
 

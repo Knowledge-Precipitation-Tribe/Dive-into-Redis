@@ -132,6 +132,13 @@
 ## 内存
 
 * [理解内存](nei-cun/li-jie-nei-cun.md)
+* [内存消耗](nei-cun/nei-cun-xiao-hao.md)
+* [内存管理](nei-cun/nei-cun-guan-li.md)
+* [内存优化](nei-cun/nei-cun-you-hua.md)
+
+## 哨兵
+
+* [基本概念](shao-bing/ji-ben-gai-nian.md)
 
 ## 集群操作
 

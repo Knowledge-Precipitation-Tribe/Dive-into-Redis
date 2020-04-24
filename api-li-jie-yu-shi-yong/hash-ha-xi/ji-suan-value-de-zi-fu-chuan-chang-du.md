@@ -6,5 +6,5 @@ hstrlen key field
 
 例如hget user:1name的value是tom，那么hstrlen的返回结果是3：
 
-![](../../.gitbook/assets/image%20%2858%29.png)
+![](../../.gitbook/assets/image%20%2870%29.png)
 
