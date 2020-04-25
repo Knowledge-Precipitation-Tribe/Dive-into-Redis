@@ -6,7 +6,7 @@ Redis所有的数据都在内存中，而内存又是非常宝贵的资源。如
 
 Redis存储的所有值对象在内部定义为redisObject结构体，内部结构如图所示。
 
-![](../.gitbook/assets/image%20%2851%29.png)
+![](../.gitbook/assets/image%20%2856%29.png)
 
 Redis存储的数据都使用redisObject来封装，包括string、hash、list、 set、zset在内的所有数据类型。理解redisObject对内存优化非常有帮助，下面针对每个字段做详细说明：
 
@@ -28,7 +28,7 @@ Redis存储的数据都使用redisObject来封装，包括string、hash、list�
 * key长度：如在设计键时，在完整描述业务情况下，键值越短越好。如 user：{uid}：friends：notify：{fid}可以简化为u：{uid}：fs：nt：{fid}。
 * value长度：值对象缩减比较复杂，常见需求是把业务对象序列化成二 进制数组放入Redis。首先应该在业务上精简业务对象，去掉不必要的属性 避免存储无效数据。其次在序列化工具选择上，应该选择更高效的序列化工 具来降低字节数组大小。以Java为例，内置的序列化方式无论从速度还是压 缩比都不尽如人意，这时可以选择更高效的序列化工具，如：protostuff、 kryo等，图8-7是Java常见序列化工具空间压缩对比。
 
-![](../.gitbook/assets/image%20%28155%29.png)
+![](../.gitbook/assets/image%20%28179%29.png)
 
 其中java-built-in-serializer表示Java内置序列化方式，更多数据见jvm-serializers项目：[https://github.com/eishay/jvm-serializers/wiki](https://github.com/eishay/jvm-serializers/wiki)，其他语言也有各自对应的高效序列化工具。
 
@@ -55,15 +55,15 @@ redis> object refcount bar
 
 设置键foo等于100时，直接使用共享池内整数对象，因此引用数是2， 再设置键bar等于100时，引用数又变为3，如图所示。
 
-![](../.gitbook/assets/image%20%28102%29.png)
+![](../.gitbook/assets/image%20%28115%29.png)
 
 使用整数对象池究竟能降低多少内存？让我们通过测试来对比对象池的内存优化效果，如表所示。
 
-![](../.gitbook/assets/image%20%2897%29.png)
+![](../.gitbook/assets/image%20%28110%29.png)
 
 使用共享对象池后，相同的数据内存使用降低30%以上。可见当数据大 量使用\[0-9999\]的整数时，共享对象池可以节约大量内存。需要注意的是对 象池并不是只要存储\[0-9999\]的整数就可以工作。当设置maxmemory并启用 LRU相关淘汰策略如：volatile-lru，allkeys-lru时，Redis禁止使用共享对象池，测试命令如下：
 
-![](../.gitbook/assets/image%20%28133%29.png)
+![](../.gitbook/assets/image%20%28154%29.png)
 
 **为什么开启maxmemory和LRU淘汰策略后对象池无效？**
 
@@ -85,7 +85,7 @@ LRU算法需要获取对象最后被访问时间，以便淘汰最长未访问�
 
 Redis没有采用原生C语言的字符串类型而是自己实现了字符串结构，内部简单动态字符串（simple dynamic string，SDS）。结构如图所示。
 
-![](../.gitbook/assets/image%20%2838%29.png)
+![](../.gitbook/assets/image%20%2841%29.png)
 
 Redis自身实现的字符串结构有如下特点：
 
@@ -98,19 +98,19 @@ Redis自身实现的字符串结构有如下特点：
 
 因为字符串（SDS）存在预分配机制，日常开发中要小心预分配带来的内存浪费，例如下表的测试用例。
 
-![](../.gitbook/assets/image%20%2893%29.png)
+![](../.gitbook/assets/image%20%28103%29.png)
 
 从测试数据可以看出，同样的数据追加后内存消耗非常严重，下面我们结合图来分析这一现象。阶段1每个字符串对象空间占用如图所示。
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](../.gitbook/assets/image%20%2839%29.png)
 
 阶段1插入新的字符串后，free字段保留空间为0，总占用空间=实际占 用空间+1字节，最后1字节保存‘\0’标示结尾，这里忽略int类型len和free字段 消耗的8字节。在阶段1原有字符串上追加60字节数据空间占用如图所示。
 
-![](../.gitbook/assets/image%20%2862%29.png)
+![](../.gitbook/assets/image%20%2869%29.png)
 
 追加操作后字符串对象预分配了一倍容量作为预留空间，而且大量追加 操作需要内存重新分配，造成内存碎片率（mem\_fragmentation\_ratio）上升。直接插入与阶段2相同数据的空间占用，如图所示。
 
-![](../.gitbook/assets/image%20%28146%29.png)
+![](../.gitbook/assets/image%20%28168%29.png)
 
 阶段3直接插入同等数据后，相比阶段2节省了每个字符串对象预分配的空间，同时降低了碎片率。
 
@@ -128,11 +128,11 @@ Redis自身实现的字符串结构有如下特点：
 
 字符串重构：指不一定把每份数据作为字符串整体存储，像json这样的 数据可以使用hash结构，使用二级结构存储也能帮我们节省内存。同时可以使用hmget、hmset命令支持字段的部分读取修改，而不用每次整体存取。例如下面的json数据：
 
-![](../.gitbook/assets/image%20%2844%29.png)
+![](../.gitbook/assets/image%20%2847%29.png)
 
 分别使用字符串和hash结构测试内存表现，如下表所示。
 
-![](../.gitbook/assets/image%20%28100%29.png)
+![](../.gitbook/assets/image%20%28113%29.png)
 
 根据测试结构，第一次默认配置下使用hash类型，内存消耗不但没有降 低反而比字符串存储多出2倍，而调整hash-max-ziplist-value=66之后内存降 低为535.60M。因为json的videoAlbumPic属性长度是65，而hash-max-ziplistvalue默认值是64，Redis采用hashtable编码方式，反而消耗了大量内存。调 整配置后hash类型内部编码方式变为ziplist，相比字符串更省内存且支持属性的部分操作。下一节将具体介绍ziplist编码优化细节。
 
@@ -142,11 +142,11 @@ Redis自身实现的字符串结构有如下特点：
 
 Redis对外提供了string、list、hash、set、zet等类型，但是Redis内部针对 不同类型存在编码的概念，所谓编码就是具体使用哪种底层数据结构来实 现。编码不同将直接影响数据的内存占用和读写效率。使用object encoding{key}命令获取编码类型。如下所示：
 
-![](../.gitbook/assets/image%20%2815%29.png)
+![](../.gitbook/assets/image%20%2817%29.png)
 
 Redis针对每种数据类型（type）可以采用至少两种编码方式来实现，下表表示type和encoding的对应关系。
 
-![](../.gitbook/assets/image%20%2867%29.png)
+![](../.gitbook/assets/image%20%2875%29.png)
 
 了解编码和类型对应关系之后，我们不禁疑惑Redis为什么对一种数据 结构实现多种编码方式？
 
@@ -156,15 +156,15 @@ Redis针对每种数据类型（type）可以采用至少两种编码方式来�
 
 编码类型转换在Redis写入数据时自动完成，这个转换过程是不可逆的，转换规则只能从小内存编码向大内存编码转换。例如：
 
-![](../.gitbook/assets/image%20%28121%29.png)
+![](../.gitbook/assets/image%20%28142%29.png)
 
 以上命令体现了list类型编码的转换过程，其中Redis之所以不支持编码回退，主要是数据增删频繁时，数据向压缩编码转换非常消耗CPU，得不偿 失。以上示例用到了list-max-ziplist-entries参数，这个参数用来决定列表长度 在多少范围内使用ziplist编码。当然还有其他参数控制各种数据类型的编码，如下表所示。
 
-![](../.gitbook/assets/image%20%28132%29.png)
+![](../.gitbook/assets/image%20%28153%29.png)
 
 掌握编码转换机制，对我们通过编码来优化内存使用非常有帮助。下面 以hash类型为例，介绍编码转换的运行流程，如图所示。
 
-![](../.gitbook/assets/image%20%2852%29.png)
+![](../.gitbook/assets/image%20%2858%29.png)
 
 理解编码转换流程和相关配置之后，可以使用config set命令设置编码相 关参数来满足使用压缩编码的条件。对于已经采用非压缩编码类型的数据如 hashtable、linkedlist等，设置参数后即使数据满足压缩编码条件，Redis也不会做转换，需要重启Redis重新加载数据才能完成转换。
 
@@ -172,7 +172,7 @@ Redis针对每种数据类型（type）可以采用至少两种编码方式来�
 
 ziplist编码主要目的是为了节约内存，因此所有数据都是采用线性连续 的内存结构。ziplist编码是应用范围最广的一种，可以分别作为hash、list、 zset类型的底层数据结构实现。首先从ziplist编码结构开始分析，它的内部结 构类似这样：&lt;....&gt; 。一个ziplist可以包含多个entry（元素），每个entry保存具体的数据 （整数或者字节数组），内部结构如图所示。
 
-![](../.gitbook/assets/image%20%28125%29.png)
+![](../.gitbook/assets/image%20%28146%29.png)
 
 ziplist结构字段含义：
 
@@ -198,7 +198,7 @@ ziplist结构字段含义：
 * 读写操作涉及复杂的指针移动，最坏时间复杂度为O（n2）。 
 * 适合存储小对象和长度有限的数据。 下面通过测试展示ziplist编码在不同类型中内存和速度的表现，如表所示。
 
-![](../.gitbook/assets/image%20%2898%29.png)
+![](../.gitbook/assets/image%20%28111%29.png)
 
 测试数据采用100W个36字节数据，划分为1000个键，每个类型长度统 一为1000。从测试结果可以看出：
 
@@ -216,11 +216,11 @@ ziplist压缩编码的性能表现跟值长度和元素个数密切相关，正�
 
 intset编码是集合（set）类型编码的一种，内部表现为存储有序、不重 复的整数集。当集合只包含整数且长度不超过set-max-intset-entries配置时被 启用。执行以下命令查看intset表现：
 
-![](../.gitbook/assets/image%20%2879%29.png)
+![](../.gitbook/assets/image%20%2889%29.png)
 
 以上命令可以看出intset对写入整数进行排序，通过O（log（n））时间 复杂度实现查找和去重操作，intset编码结构如图所示。
 
-![](../.gitbook/assets/image%20%28103%29.png)
+![](../.gitbook/assets/image%20%28116%29.png)
 
 intset的字段结构含义：
 
@@ -236,7 +236,7 @@ intset保存的整数类型根据长度划分，当保存的整数超出当前�
 
 下面通过测试查看ziplist编码的集合内存和速度表现，如表所示。
 
-![](../.gitbook/assets/image%20%2854%29.png)
+![](../.gitbook/assets/image%20%2860%29.png)
 
 根据以上测试结果发现intset表现非常好，同样的数据内存占用只有不 到hashtable编码的十分之一。intset数据结构插入命令复杂度为O（n），查询 命令为O（log（n）），由于整数占用空间非常小，所以在集合长度可控的 基础上，写入命令执行速度也会非常快，因此当使用整数集合时尽量使用 intset编码。表8-8测试第三行把ziplist-hash类型也放入其中，主要因为intset 编码必须存储整数，当集合内保存非整数数据时，无法使用intset实现内存 优化。这时可以使用ziplist-hash类型对象模拟集合类型，hash的field当作集 合中的元素，value设置为1字节占位符即可。使用ziplist编码的hash类型依然 比使用hashtable编码的集合节省大量内存。
 
@@ -244,7 +244,7 @@ intset保存的整数类型根据长度划分，当保存的整数超出当前�
 
 当使用Redis存储大量数据时，通常会存在大量键，过多的键同样会消 耗大量内存。Redis本质是一个数据结构服务器，它为我们提供多种数据结 构，如hash、list、set、zset等。使用Redis时不要进入一个误区，大量使用 get/set这样的API，把Redis当成Memcached使用。对于存储相同的数据内容 利用Redis的数据结构降低外层键的数量，也可以节省大量内存。如图8-16 所示，通过在客户端预估键规模，把大量键分组映射到多个hash结构中降低键的数量。
 
-![](../.gitbook/assets/image%20%28106%29.png)
+![](../.gitbook/assets/image%20%28119%29.png)
 
 hash结构降低键数量分析：
 
@@ -254,7 +254,7 @@ hash结构降低键数量分析：
 
 下面测试这种优化技巧的内存表现，如表所示。
 
-![](../.gitbook/assets/image%20%28147%29.png)
+![](../.gitbook/assets/image%20%28169%29.png)
 
 通过这个测试数据，可以说明： ·同样的数据使用ziplist编码的hash类型存储比string类型节约内存。 ·节省内存量随着value空间的减少越来越明显。 ·hash-ziplist类型比string类型写入耗时，但随着value空间的减少，耗时 逐渐降低。 使用hash重构后节省内存量效果非常明显，特别对于存储小对象的场 景，内存只有不到原来的1/5。下面分析这种内存优化技巧的关键点： 
 

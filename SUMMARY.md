@@ -139,6 +139,13 @@
 ## 哨兵
 
 * [基本概念](shao-bing/ji-ben-gai-nian.md)
+* [安装和部署](shao-bing/an-zhuang-he-bu-shu/README.md)
+  * [部署拓扑结构](shao-bing/an-zhuang-he-bu-shu/bu-shu-tuo-pu-jie-gou.md)
+  * [部署Redis数据节点](shao-bing/an-zhuang-he-bu-shu/bu-shu-redis-shu-ju-jie-dian.md)
+  * [部署Sentinel节点](shao-bing/an-zhuang-he-bu-shu/bu-shu-sentinel-jie-dian.md)
+  * [配置优化](shao-bing/an-zhuang-he-bu-shu/pei-zhi-you-hua.md)
+  * [部署技巧](shao-bing/an-zhuang-he-bu-shu/bu-shu-ji-qiao.md)
+* [API](shao-bing/api.md)
 
 ## 集群操作
 
