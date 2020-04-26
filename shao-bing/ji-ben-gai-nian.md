@@ -30,7 +30,7 @@ Redis主从复制模式下，一旦主节点出现了故障不可达，需要人
 
 2）如果主节点无法正常启动，需要选出一个从节点 （slave-1），对其执行slaveof no one命令使其成为新的主节点。
 
-![](../.gitbook/assets/image%20%28159%29.png)
+![](../.gitbook/assets/image%20%28160%29.png)
 
 3）原来的从节点（slave-1）成为新的主节点后，更新应用方的主节点信息，重新启动应用方。
 
@@ -78,7 +78,7 @@ Redis Sentinel是一个分布式架构，其中包含若干个Sentinel节点和R
 
 3）多个Sentinel节点对主节点的故障达成一致，选举出 sentinel-3节点作为领导者负责故障转移。
 
-![](../.gitbook/assets/image%20%28173%29.png)
+![](../.gitbook/assets/image%20%28174%29.png)
 
 4）Sentinel领导者节点执行了故障转移，整个过程和高可用中介绍的是完全一致的，只不过是自动化完成的。
 

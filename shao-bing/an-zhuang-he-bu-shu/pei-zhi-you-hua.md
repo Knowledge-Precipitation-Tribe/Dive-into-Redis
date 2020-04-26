@@ -223,7 +223,7 @@ sentinel set <param> <value>
 
 下表是sentinel set命令支持的参数。
 
-![](../../.gitbook/assets/image%20%28170%29.png)
+![](../../.gitbook/assets/image%20%28171%29.png)
 
 有几点需要注意一下： 
 

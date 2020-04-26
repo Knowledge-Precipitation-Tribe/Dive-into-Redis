@@ -18,7 +18,7 @@
 
 为了解决这个问题，可以使用Redis将用户的Session进行集中管理，如图所示，在这种模式下只要保证Redis是高可用和扩展性的，每次用户更新或者查询登录信息都直接从Redis中集中获取。
 
-![](../../.gitbook/assets/image%20%28174%29.png)
+![](../../.gitbook/assets/image%20%28175%29.png)
 
 ### 限速
 

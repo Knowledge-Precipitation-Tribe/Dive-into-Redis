@@ -40,7 +40,7 @@ fd=5 name= age=11 idle=0 flags=N db=0 sub=0 psub=0 multi=-1 qbuf=0 qbuf-free= 32
 
 如果从节点无法建立连接，定时任务会无限重试直到连接成功或者执行 slaveof no one取消复制，如图所示。
 
-![](../.gitbook/assets/image%20%28178%29.png)
+![](../.gitbook/assets/image%20%28179%29.png)
 
 关于连接失败，可以在从节点执行info replication查看 master\_link\_down\_since\_seconds指标，它会记录与主节点连接失败的系统时间。从节点连接主节点失败时也会每秒打印如下日志，方便运维人员发现问 题：
 

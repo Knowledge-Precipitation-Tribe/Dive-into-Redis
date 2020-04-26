@@ -39,7 +39,7 @@ pfcount用于计算一个或多个HyperLogLog的独立总数，例如 2016\_03\_
 (integer) 5
 ```
 
-![&#x96C6;&#x5408;&#x7C7B;&#x578B;&#x548C;HyperLogLog&#x5360;&#x7528;&#x7A7A;&#x95F4;&#x5BF9;&#x6BD4;](../.gitbook/assets/image%20%28165%29.png)
+![&#x96C6;&#x5408;&#x7C7B;&#x578B;&#x548C;HyperLogLog&#x5360;&#x7528;&#x7A7A;&#x95F4;&#x5BF9;&#x6BD4;](../.gitbook/assets/image%20%28166%29.png)
 
 可以看到，HyperLogLog内存占用量小得惊人，但是用如此小空间来估算如此巨大的数据，必然不是100%的正确，其中一定存在误差率。Redis官方给出的数字是0.81%的失误率。
 

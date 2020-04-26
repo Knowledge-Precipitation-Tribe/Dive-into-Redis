@@ -28,7 +28,7 @@ Redis存储的数据都使用redisObject来封装，包括string、hash、list�
 * key长度：如在设计键时，在完整描述业务情况下，键值越短越好。如 user：{uid}：friends：notify：{fid}可以简化为u：{uid}：fs：nt：{fid}。
 * value长度：值对象缩减比较复杂，常见需求是把业务对象序列化成二 进制数组放入Redis。首先应该在业务上精简业务对象，去掉不必要的属性 避免存储无效数据。其次在序列化工具选择上，应该选择更高效的序列化工 具来降低字节数组大小。以Java为例，内置的序列化方式无论从速度还是压 缩比都不尽如人意，这时可以选择更高效的序列化工具，如：protostuff、 kryo等，图8-7是Java常见序列化工具空间压缩对比。
 
-![](../.gitbook/assets/image%20%28179%29.png)
+![](../.gitbook/assets/image%20%28180%29.png)
 
 其中java-built-in-serializer表示Java内置序列化方式，更多数据见jvm-serializers项目：[https://github.com/eishay/jvm-serializers/wiki](https://github.com/eishay/jvm-serializers/wiki)，其他语言也有各自对应的高效序列化工具。
 
@@ -63,7 +63,7 @@ redis> object refcount bar
 
 使用共享对象池后，相同的数据内存使用降低30%以上。可见当数据大 量使用\[0-9999\]的整数时，共享对象池可以节约大量内存。需要注意的是对 象池并不是只要存储\[0-9999\]的整数就可以工作。当设置maxmemory并启用 LRU相关淘汰策略如：volatile-lru，allkeys-lru时，Redis禁止使用共享对象池，测试命令如下：
 
-![](../.gitbook/assets/image%20%28154%29.png)
+![](../.gitbook/assets/image%20%28155%29.png)
 
 **为什么开启maxmemory和LRU淘汰策略后对象池无效？**
 
@@ -110,7 +110,7 @@ Redis自身实现的字符串结构有如下特点：
 
 追加操作后字符串对象预分配了一倍容量作为预留空间，而且大量追加 操作需要内存重新分配，造成内存碎片率（mem\_fragmentation\_ratio）上升。直接插入与阶段2相同数据的空间占用，如图所示。
 
-![](../.gitbook/assets/image%20%28168%29.png)
+![](../.gitbook/assets/image%20%28169%29.png)
 
 阶段3直接插入同等数据后，相比阶段2节省了每个字符串对象预分配的空间，同时降低了碎片率。
 
@@ -160,7 +160,7 @@ Redis针对每种数据类型（type）可以采用至少两种编码方式来�
 
 以上命令体现了list类型编码的转换过程，其中Redis之所以不支持编码回退，主要是数据增删频繁时，数据向压缩编码转换非常消耗CPU，得不偿 失。以上示例用到了list-max-ziplist-entries参数，这个参数用来决定列表长度 在多少范围内使用ziplist编码。当然还有其他参数控制各种数据类型的编码，如下表所示。
 
-![](../.gitbook/assets/image%20%28153%29.png)
+![](../.gitbook/assets/image%20%28154%29.png)
 
 掌握编码转换机制，对我们通过编码来优化内存使用非常有帮助。下面 以hash类型为例，介绍编码转换的运行流程，如图所示。
 
@@ -254,7 +254,7 @@ hash结构降低键数量分析：
 
 下面测试这种优化技巧的内存表现，如表所示。
 
-![](../.gitbook/assets/image%20%28169%29.png)
+![](../.gitbook/assets/image%20%28170%29.png)
 
 通过这个测试数据，可以说明： ·同样的数据使用ziplist编码的hash类型存储比string类型节约内存。 ·节省内存量随着value空间的减少越来越明显。 ·hash-ziplist类型比string类型写入耗时，但随着value空间的减少，耗时 逐渐降低。 使用hash重构后节省内存量效果非常明显，特别对于存储小对象的场 景，内存只有不到原来的1/5。下面分析这种内存优化技巧的关键点： 
 
