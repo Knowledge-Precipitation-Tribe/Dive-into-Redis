@@ -150,5 +150,12 @@
 ## 集群操作
 
 * [集群简介](ji-qun-cao-zuo/ji-qun-jian-jie.md)
+* [数据分布](ji-qun-cao-zuo/shu-ju-fen-bu/README.md)
+  * [数据分布理论](ji-qun-cao-zuo/shu-ju-fen-bu/shu-ju-fen-bu-li-lun.md)
+  * [Redis数据分区](ji-qun-cao-zuo/shu-ju-fen-bu/redis-shu-ju-fen-qu.md)
+  * [集群功能限制](ji-qun-cao-zuo/shu-ju-fen-bu/ji-qun-gong-neng-xian-zhi.md)
+* [搭建集群](ji-qun-cao-zuo/da-jian-ji-qun/README.md)
+  * [节点握手](ji-qun-cao-zuo/da-jian-ji-qun/jie-dian-wo-shou.md)
+* [Untitled](ji-qun-cao-zuo/untitled.md)
 * [常见问题](chang-jian-wen-ti-1.md)
 

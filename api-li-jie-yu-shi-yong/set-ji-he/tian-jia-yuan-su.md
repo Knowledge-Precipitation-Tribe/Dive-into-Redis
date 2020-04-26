@@ -6,5 +6,5 @@ sadd key element [element ...]
 
 返回结果为添加成功的元素个数，例如：
 
-![](../../.gitbook/assets/image%20%2876%29.png)
+![](../../.gitbook/assets/image%20%2880%29.png)
 

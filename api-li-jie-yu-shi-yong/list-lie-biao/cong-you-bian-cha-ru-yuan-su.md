@@ -6,9 +6,9 @@ rpush key value [value ...]
 
 下面代码从右向左插入元素c、b、a：
 
-![](../../.gitbook/assets/image%20%28137%29.png)
+![](../../.gitbook/assets/image%20%28144%29.png)
 
 lrange 0 -1命令可以从左到右获取列表的所有元素：
 
-![](../../.gitbook/assets/image%20%28106%29.png)
+![](../../.gitbook/assets/image%20%28112%29.png)
 

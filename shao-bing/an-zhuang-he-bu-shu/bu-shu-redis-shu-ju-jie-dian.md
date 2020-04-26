@@ -88,5 +88,5 @@ master_link_status:up
 
 此时拓扑结构如图所示。
 
-![](../../.gitbook/assets/image%20%28121%29.png)
+![](../../.gitbook/assets/image%20%28127%29.png)
 
