@@ -16,9 +16,9 @@
 
 Sentinel节点集合可以只监控一个主节点，也可以监控多个主节点，也 就意味着部署拓扑可能是如下两种情况。
 
-![&#x4E00;&#x5957;Sentinel&#x8282;&#x70B9;&#x96C6;&#x5408;](../../.gitbook/assets/image%20%28126%29.png)
+![&#x4E00;&#x5957;Sentinel&#x8282;&#x70B9;&#x96C6;&#x5408;](../../.gitbook/assets/image%20%28131%29.png)
 
-![&#x591A;&#x5957;Sentine&#x8282;&#x70B9;&#x96C6;&#x5408;](../../.gitbook/assets/image%20%28134%29.png)
+![&#x591A;&#x5957;Sentine&#x8282;&#x70B9;&#x96C6;&#x5408;](../../.gitbook/assets/image%20%28140%29.png)
 
 那么在实际生产环境中更偏向于哪一种部署方式呢，下面分别分析两种 方案的优缺点。
 

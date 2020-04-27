@@ -1,4 +1,4 @@
 # 字符串命令总结
 
-![](../../.gitbook/assets/image%20%28188%29.png)
+![](../../.gitbook/assets/image%20%28200%29.png)
 

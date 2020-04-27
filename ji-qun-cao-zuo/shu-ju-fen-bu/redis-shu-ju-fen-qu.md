@@ -2,7 +2,7 @@
 
 Redis Cluser采用虚拟槽分区，所有的键根据哈希函数映射到0~16383整 数槽内，计算公式：slot=CRC16（key）&16383。每一个节点负责维护一部 分槽以及槽所映射的键值数据，如图所示。
 
-![](../../.gitbook/assets/image%20%2845%29.png)
+![](../../.gitbook/assets/image%20%2849%29.png)
 
 Redis虚拟槽分区的特点： 
 

@@ -2,9 +2,9 @@
 
 下面将以3个Sentinel节点、1个主节点、2个从节点组成一个Redis Sentinel进行说明，拓扑结构如图所示。
 
-![](../../.gitbook/assets/image%20%28139%29.png)
+![](../../.gitbook/assets/image%20%28145%29.png)
 
 具体的物理部署如表所示。
 
-![](../../.gitbook/assets/image%20%2882%29.png)
+![](../../.gitbook/assets/image%20%2887%29.png)
 

@@ -6,5 +6,5 @@ hlen key
 
 我们先给user:1设置几个field
 
-![](../../.gitbook/assets/image%20%28101%29.png)
+![](../../.gitbook/assets/image%20%28106%29.png)
 

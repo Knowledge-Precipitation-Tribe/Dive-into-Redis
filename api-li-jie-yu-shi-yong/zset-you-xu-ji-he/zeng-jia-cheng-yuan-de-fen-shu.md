@@ -6,5 +6,5 @@ zincrby key increment member
 
 下面操作给tom增加了9分，分数变为了260分：
 
-![](../../.gitbook/assets/image%20%2867%29.png)
+![](../../.gitbook/assets/image%20%2871%29.png)
 

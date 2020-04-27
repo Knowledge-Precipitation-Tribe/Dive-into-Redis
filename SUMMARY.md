@@ -156,6 +156,9 @@
   * [集群功能限制](ji-qun-cao-zuo/shu-ju-fen-bu/ji-qun-gong-neng-xian-zhi.md)
 * [搭建集群](ji-qun-cao-zuo/da-jian-ji-qun/README.md)
   * [节点握手](ji-qun-cao-zuo/da-jian-ji-qun/jie-dian-wo-shou.md)
-* [Untitled](ji-qun-cao-zuo/untitled.md)
+  * [分配槽](ji-qun-cao-zuo/da-jian-ji-qun/fen-pei-cao.md)
+  * [用redis-trib.rb搭建集群](ji-qun-cao-zuo/da-jian-ji-qun/yong-redistrib.rb-da-jian-ji-qun.md)
+* [节点通信](ji-qun-cao-zuo/untitled/README.md)
+  * [通信流程](ji-qun-cao-zuo/untitled/tong-xin-liu-cheng.md)
 * [常见问题](chang-jian-wen-ti-1.md)
 
