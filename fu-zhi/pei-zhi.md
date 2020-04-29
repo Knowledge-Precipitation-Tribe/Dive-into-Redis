@@ -65,7 +65,7 @@ slaveof命令不但可以建立复制，还可以在从节点执行slaveof no on
 
 通过slaveof命令还可以实现切主操作，所谓切主是指把当前从节点对主节点的复制切换到另一个主节点。执行slaveof{newMasterIp} {newMasterPort}命令即可，例如把6380节点从原来的复制6379节点变为复制6381节点。
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%285%29.png)
 
 切主后从节点会清空之前所有的数据，线上人工操作时小心slaveof在错误的节点上执行或者指向错误的主节点。
 

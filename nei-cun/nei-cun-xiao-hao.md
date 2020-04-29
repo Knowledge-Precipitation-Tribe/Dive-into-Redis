@@ -6,7 +6,7 @@
 
 首先需要了解Redis自身使用内存的统计数据，可通过执行info memory命令获取内存相关指标。读懂每个指标有助于分析Redis内存使用情况，下表列举出内存统计指标和对应解释。
 
-![](../.gitbook/assets/image%20%2860%29.png)
+![](../.gitbook/assets/image%20%2862%29.png)
 
 需要重点关注的指标有：used\_memory\_rss和used\_memory以及它们的比值mem\_fragmentation\_ratio。
 
@@ -18,7 +18,7 @@
 
 Redis进程内消耗主要包括：自身内存+对象内存+缓冲内存+内存碎片， 其中Redis空进程自身内存消耗非常少，通常used\_memory\_rss在3MB左右， used\_memory在800KB左右，一个空的Redis进程消耗内存可以忽略不计。 Redis主要内存消耗如图所示。下面介绍另外三种内存消耗。
 
-![](../.gitbook/assets/image%20%2810%29.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
 ### 对象内存
 

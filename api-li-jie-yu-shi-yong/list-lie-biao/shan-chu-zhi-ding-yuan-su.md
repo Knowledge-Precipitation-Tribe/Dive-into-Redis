@@ -12,5 +12,5 @@ lrem命令会从列表中找到等于value的元素进行删除，根据count的
 
 例如向列表从左向右插入5个a，那么当前列表变为“a a a a a java b a c b”， 下面操作将从列表左边开始删除4个为a的元素：
 
-![](../../.gitbook/assets/image%20%28152%29.png)
+![](../../.gitbook/assets/image%20%28155%29.png)
 

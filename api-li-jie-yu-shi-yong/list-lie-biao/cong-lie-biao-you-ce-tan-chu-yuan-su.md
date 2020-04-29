@@ -6,5 +6,5 @@ rpop key
 
 如下操作将列表最右侧的元素a会被弹出
 
-![](../../.gitbook/assets/image%20%28107%29.png)
+![](../../.gitbook/assets/image%20%28109%29.png)
 

@@ -47,7 +47,7 @@ sentinel failover-timeout mymaster 180000
 * 去掉了默认配置，例如parallel-syncs、failover-timeout参数。 
 * 添加了配置纪元相关参数。 启动后变化为：
 
-![](../../.gitbook/assets/image%20%2859%29.png)
+![](../../.gitbook/assets/image%20%2861%29.png)
 
 参数用于故障发现和判定，例如将quorum配置为2，代表至少有2个Sentinel节点认为主节点不可达，那么这个不可达的判定才是客观的。 对于设置的越小，那么达到下线的条件越宽松，反之越严格。一般建议将其设置为Sentinel节点的一半加1。
 
@@ -85,7 +85,7 @@ sentinel parallel-syncs <master-name> <nums>
 sentinel failover-timeout <master-name> <times>
 ```
 
-![](../../.gitbook/assets/image%20%28148%29.png)
+![](../../.gitbook/assets/image%20%28151%29.png)
 
 failover-timeout通常被解释成故障转移超时时间，但实际上它作用于故 障转移的各个阶段：
 
@@ -207,11 +207,11 @@ mymaster observer start 127.0.0.1 6379 127.0.0.1 6380
 
 Redis Sentinel可以同时监控多个主节点，具体拓扑图类似于下图。 
 
-![](../../.gitbook/assets/image%20%2821%29.png)
+![](../../.gitbook/assets/image%20%2823%29.png)
 
 配置方法也比较简单，只需要指定多个masterName来区分不同的主节点 即可，例如下面的配置监控monitor master-business-1（10.10.xx.1：6379）和 monitor master-business-2（10.10.xx.2：6379）两个主节点：
 
-![](../../.gitbook/assets/image%20%2883%29.png)
+![](../../.gitbook/assets/image%20%2885%29.png)
 
 ## 调整配置
 
@@ -223,7 +223,7 @@ sentinel set <param> <value>
 
 下表是sentinel set命令支持的参数。
 
-![](../../.gitbook/assets/image%20%28187%29.png)
+![](../../.gitbook/assets/image%20%28192%29.png)
 
 有几点需要注意一下： 
 

@@ -10,7 +10,7 @@ redis-cli -h 127.0.0.1 -p 6381 cluster addslots {10923...16383}
 
 把16384个slot平均分配给6379、6380、6381三个节点。执行cluster info 查看集群状态，如下所示：
 
-![](../../.gitbook/assets/image%20%2830%29.png)
+![](../../.gitbook/assets/image%20%2832%29.png)
 
 当前集群状态是OK，集群进入在线状态。所有的槽都已经分配给节 点，执行cluster nodes命令可以看到节点和槽的分配关系：
 
@@ -37,11 +37,11 @@ OK
 
 Redis集群模式下的主从复制使用了之前介绍的Redis复制流程，依然支 持全量和部分复制。复制（replication）完成后，整个集群的结构如图所示。
 
-![](../../.gitbook/assets/image%20%289%29.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
 通过cluster nodes命令查看集群状态和复制关系，如下所示：
 
-![](../../.gitbook/assets/image%20%2840%29.png)
+![](../../.gitbook/assets/image%20%2842%29.png)
 
 目前为止，我们依照Redis协议手动建立一个集群。它由6个节点构成， 3个主节点负责处理槽和相关数据，3个从节点负责故障转移。手动搭建集群 便于理解集群建立的流程和细节，不过读者也从中发现集群搭建需要很多步 骤，当集群节点众多时，必然会加大搭建集群的复杂度和运维成本。因此 Redis官方提供了redis-trib.rb工具方便我们快速搭建集群。
 
