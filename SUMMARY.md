@@ -164,4 +164,5 @@
   * [节点选择](ji-qun-cao-zuo/untitled/jie-dian-xuan-ze.md)
 * [集群伸缩](ji-qun-cao-zuo/ji-qun-shen-suo.md)
 * [常见问题](chang-jian-wen-ti-1.md)
+* [参考文献](can-kao-wen-xian.md)
 
