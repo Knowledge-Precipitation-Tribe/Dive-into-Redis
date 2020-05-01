@@ -2,7 +2,7 @@
 
 Sentinel节点是一个特殊的Redis节点，它有自己专属的API，本节将对其进行介绍。为了方便演示，按下图进行说明：Sentinel节点集合监控着两组主从模式的Redis数据节点。
 
-![](../.gitbook/assets/image%20%28171%29.png)
+![](../.gitbook/assets/image%20%28186%29.png)
 
 ## 1.sentinel masters
 

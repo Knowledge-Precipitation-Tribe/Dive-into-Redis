@@ -162,7 +162,11 @@
   * [通信流程](ji-qun-cao-zuo/untitled/tong-xin-liu-cheng.md)
   * [Gossip消息](ji-qun-cao-zuo/untitled/gossip-xiao-xi.md)
   * [节点选择](ji-qun-cao-zuo/untitled/jie-dian-xuan-ze.md)
-* [集群伸缩](ji-qun-cao-zuo/ji-qun-shen-suo.md)
+* [集群伸缩](ji-qun-cao-zuo/ji-qun-shen-suo/README.md)
+  * [伸缩原理](ji-qun-cao-zuo/ji-qun-shen-suo/shen-suo-yuan-li.md)
+  * [扩容集群](ji-qun-cao-zuo/ji-qun-shen-suo/kuo-rong-ji-qun.md)
+  * [收缩集群](ji-qun-cao-zuo/ji-qun-shen-suo/shou-suo-ji-qun.md)
+* [请求路由](ji-qun-cao-zuo/qing-qiu-lu-you.md)
 * [常见问题](chang-jian-wen-ti-1.md)
 * [参考文献](can-kao-wen-xian.md)
 

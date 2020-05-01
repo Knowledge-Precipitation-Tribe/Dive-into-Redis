@@ -2,7 +2,7 @@
 
 HyperLogLog并不是一种新的数据结构（实际类型为字符串类型），而是一种基数算法，通过HyperLogLog可以利用极小的内存空间完成独立总数的统计，数据集可以是IP、Email、ID等。HyperLogLog提供了3个命令： pfadd、pfcount、pfmerge。例如2016-03-06的访问用户是uuid-1、uuid-2、 uuid-3、uuid-4，2016-03-05的访问用户是uuid-4、uuid-5、uuid-6、uuid-7，如图所示。
 
-![](../.gitbook/assets/image%20%28130%29.png)
+![](../.gitbook/assets/image%20%28140%29.png)
 
 ### 添加
 
@@ -39,7 +39,7 @@ pfcount用于计算一个或多个HyperLogLog的独立总数，例如 2016\_03\_
 (integer) 5
 ```
 
-![&#x96C6;&#x5408;&#x7C7B;&#x578B;&#x548C;HyperLogLog&#x5360;&#x7528;&#x7A7A;&#x95F4;&#x5BF9;&#x6BD4;](../.gitbook/assets/image%20%28186%29.png)
+![&#x96C6;&#x5408;&#x7C7B;&#x578B;&#x548C;HyperLogLog&#x5360;&#x7528;&#x7A7A;&#x95F4;&#x5BF9;&#x6BD4;](../.gitbook/assets/image%20%28204%29.png)
 
 可以看到，HyperLogLog内存占用量小得惊人，但是用如此小空间来估算如此巨大的数据，必然不是100%的正确，其中一定存在误差率。Redis官方给出的数字是0.81%的失误率。
 

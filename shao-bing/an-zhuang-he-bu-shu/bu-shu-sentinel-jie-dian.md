@@ -54,7 +54,7 @@ master0:name=mymaster,status=ok,address=127.0.0.1:6379,slaves=2,sentinels=3
 
 当三个Sentinel节点都启动后，整个拓扑结构如图所示。
 
-![](../../.gitbook/assets/image%20%2860%29.png)
+![](../../.gitbook/assets/image%20%2864%29.png)
 
 至此Redis Sentinel已经搭建起来了，整体上还是比较容易的，但是有2点需要强调一下：
 

@@ -4,7 +4,7 @@ Gossip协议的主要职责就是信息交换。信息交换的载体就是节�
 
 常用的Gossip消息可分为：ping消息、pong消息、meet消息、fail消息等，它们的通信模式如图所示。
 
-![](../../.gitbook/assets/image%20%28157%29.png)
+![](../../.gitbook/assets/image%20%28169%29.png)
 
 * meet消息：用于通知新节点加入。消息发送者通知接收者加入到当前 集群，meet消息通信正常完成后，接收节点会加入到集群中并进行周期性的 ping、pong消息交换。
 * ping消息：集群内交换最频繁的消息，集群内每个节点每秒向多个其 他节点发送ping消息，用于检测节点是否在线和交换彼此状态信息。ping消 息发送封装了自身节点和部分其他节点的状态数据。
@@ -13,7 +13,7 @@ Gossip协议的主要职责就是信息交换。信息交换的载体就是节�
 
 所有的消息格式划分为：消息头和消息体。消息头包含发送节点自身状态数据，接收节点根据消息头就可以获取到发送节点的相关数据，结构如下：
 
-![](../../.gitbook/assets/image%20%28188%29.png)
+![](../../.gitbook/assets/image%20%28206%29.png)
 
 集群内所有的消息都采用相同的消息头结构clusterMsg，它包含了发送 节点关键信息，如节点id、槽映射、节点标识（主从角色，是否下线）等。 消息体在Redis内部采用clusterMsgData结构声明，结构如下：
 
@@ -34,7 +34,7 @@ union clusterMsgData {
 
 消息体clusterMsgData定义发送消息的数据，其中ping、meet、pong都采 用cluster MsgDataGossip数组作为消息体数据，实际消息类型使用消息头的 type属性区分。每个消息体包含该节点的多个clusterMsgDataGossip结构数 据，用于信息交换，结构如下：
 
-![](../../.gitbook/assets/image%20%28142%29.png)
+![](../../.gitbook/assets/image%20%28152%29.png)
 
 当接收到ping、meet消息时，接收节点会解析消息内容并根据自身的识 别情况做出相应处理，对应流程如图所示。
 
