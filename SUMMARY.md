@@ -167,6 +167,27 @@
   * [扩容集群](ji-qun-cao-zuo/ji-qun-shen-suo/kuo-rong-ji-qun.md)
   * [收缩集群](ji-qun-cao-zuo/ji-qun-shen-suo/shou-suo-ji-qun.md)
 * [请求路由](ji-qun-cao-zuo/qing-qiu-lu-you.md)
+
+## 缓存设计
+
+* [缓存设计](huan-cun-she-ji/huan-cun-she-ji.md)
+* [缓存的收益和成本](huan-cun-she-ji/huan-cun-de-shou-yi-he-cheng-ben.md)
+* [缓存更新策略](huan-cun-she-ji/huan-cun-geng-xin-ce-lve.md)
+* [缓存粒度控制](huan-cun-she-ji/huan-cun-li-du-kong-zhi.md)
+
+## 开发运维的“陷阱”
+
+* [开发运维的“陷阱”](kai-fa-yun-wei-de-xian-jing/kai-fa-yun-wei-de-xian-jing.md)
+* [Linux配置优化](kai-fa-yun-wei-de-xian-jing/linux-pei-zhi-you-hua/README.md)
+  * [内存分配控制](kai-fa-yun-wei-de-xian-jing/linux-pei-zhi-you-hua/nei-cun-fen-pei-kong-zhi.md)
+
+## Redis监控运维云平台CacheCloud
+
+* [Redis监控运维云平台CacheCloud](redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/redis-jian-kong-yun-wei-yun-ping-tai-cachecloud.md)
+* [CacheCloud是什么](redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/cachecloud-shi-shen-me/README.md)
+  * [现有问题](redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/cachecloud-shi-shen-me/xian-you-wen-ti.md)
+  * [CacheCloud基本功能](redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/cachecloud-shi-shen-me/cachecloud-ji-ben-gong-neng.md)
+* [快速部署](redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/kuai-su-bu-shu.md)
 * [常见问题](chang-jian-wen-ti-1.md)
 * [参考文献](can-kao-wen-xian.md)
 

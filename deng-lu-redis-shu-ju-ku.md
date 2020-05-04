@@ -12,5 +12,5 @@ redis-cli
 
 我们来看一下redis的信息，在终端输入`info`
 
-![](.gitbook/assets/image%20%2856%29.png)
+![](.gitbook/assets/image%20%2860%29.png)
 

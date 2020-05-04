@@ -19,7 +19,7 @@ redis-server conf/redis-6386.conf
 
 启动后的新节点作为孤儿节点运行，并没有其他节点与之通信，集群结构如图所示。
 
-![](../../.gitbook/assets/image%20%28157%29.png)
+![](../../.gitbook/assets/image%20%28162%29.png)
 
 ## 2.加入集群
 
@@ -32,7 +32,7 @@ redis-server conf/redis-6386.conf
 
 新节点加入后集群结构如图所示。
 
-![](../../.gitbook/assets/image%20%2855%29.png)
+![](../../.gitbook/assets/image%20%2859%29.png)
 
 集群内新旧节点经过一段时间的ping/pong消息通信之后，所有节点会发 现新节点并将它们的状态保存到本地。例如我们在6380节点上执行cluster nodes命令可以看到新节点信息，如下所示：
 
@@ -76,17 +76,17 @@ redis-trib.rb add-node 127.0.0.1:6386 127.0.0.1:6379
 
 槽是Redis集群管理数据的基本单位，首先需要为新节点制定槽的迁移 计划，确定原有节点的哪些槽需要迁移到新节点。迁移计划需要确保每个节 点负责相似数量的槽，从而保证各节点的数据均匀。例如，在集群中加入 6385节点，如图10-21所示。加入6385节点后，原有节点负责的槽数量从 6380变为4096个。
 
-![](../../.gitbook/assets/image%20%2865%29.png)
+![](../../.gitbook/assets/image%20%2869%29.png)
 
 槽迁移计划确定后开始逐个把槽内数据从源节点迁移到目标节点，如图所示。
 
-![](../../.gitbook/assets/image%20%2872%29.png)
+![](../../.gitbook/assets/image%20%2876%29.png)
 
 ### （2）迁移数据 
 
 数据迁移过程是逐个槽进行的，每个槽数据迁移的流程如图所示。 
 
-![](../../.gitbook/assets/image%20%28202%29.png)
+![](../../.gitbook/assets/image%20%28207%29.png)
 
 流程说明： 
 
@@ -104,7 +104,7 @@ redis-trib.rb add-node 127.0.0.1:6386 127.0.0.1:6379
 
 使用伪代码模拟迁移过程如下：
 
-![](../../.gitbook/assets/image%20%2826%29.png)
+![](../../.gitbook/assets/image%20%2827%29.png)
 
 根据以上流程，我们手动使用命令把源节点6379负责的槽4096迁移到目 标节点6385中，流程如下：
 
@@ -205,7 +205,7 @@ redis-trib.rb reshard host:port --from <arg> --to <arg> --slots <arg> --yes --ti
 
 reshard命令简化了数据迁移的工作量，其内部针对每个槽的数据迁移同 样使用之前的流程。我们已经为新节点6395迁移了一个槽4096，剩下的槽数 据迁移使用redis-trib.rb完成，命令如下：
 
-![](../../.gitbook/assets/image%20%28170%29.png)
+![](../../.gitbook/assets/image%20%28175%29.png)
 
 打印出集群每个节点信息后，reshard命令需要确认迁移的槽数量，这里 我们输入4096个：
 
@@ -262,9 +262,9 @@ Moving slot 10923 from 127.0.0.1:6381 to 127.0.0.1:6385 ..
 
 当所有的槽迁移完成后，reshard命令自动退出，执行cluster nodes命令 检查节点和槽映射的变化，如下所示：
 
-![](../../.gitbook/assets/image%20%28102%29.png)
+![](../../.gitbook/assets/image%20%28106%29.png)
 
-![](../../.gitbook/assets/image%20%28224%29.png)
+![](../../.gitbook/assets/image%20%28230%29.png)
 
 节点6385负责的槽变为：0-136540965462-682610923-12287。由于槽用 于hash运算本身顺序没有意义，因此无须强制要求节点负责槽的顺序性。迁 移之后建议使用redis-trib.rb rebalance命令检查节点之间槽的均衡性。命令如下：
 
@@ -301,5 +301,5 @@ Moving slot 10923 from 127.0.0.1:6381 to 127.0.0.1:6385 ..
 
 到此整个集群扩容完成，集群关系结构如图所示。
 
-![](../../.gitbook/assets/image%20%28184%29.png)
+![](../../.gitbook/assets/image%20%28189%29.png)
 
