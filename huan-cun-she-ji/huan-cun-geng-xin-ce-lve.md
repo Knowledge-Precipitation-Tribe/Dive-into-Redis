@@ -28,7 +28,7 @@
 
 ## 三种策略对比
 
-![](../.gitbook/assets/image%20%28142%29.png)
+![](../.gitbook/assets/image%20%28143%29.png)
 
 ## 4.最佳实践
 

@@ -6,5 +6,5 @@ srem key element [element ...]
 
 返回结果为成功删除元素个数，例如：
 
-![](../../.gitbook/assets/image%20%2857%29.png)
+![](../../.gitbook/assets/image%20%2858%29.png)
 

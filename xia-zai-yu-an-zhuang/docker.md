@@ -34,5 +34,9 @@ docker-compose up -d
 docker-compose exec redis bash
 ```
 
-在容器中我们就可以对Redis进行各种操作了。
+进入容器中后我们就可以使用客户端连接来对Redis进行各种操作了。
+
+```text
+redis-cli
+```
 

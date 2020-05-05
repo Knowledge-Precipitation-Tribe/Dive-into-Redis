@@ -4,7 +4,7 @@ Redis的主从复制模式下，一旦主节点由于故障不能提供服务，
 
 由于对Redis的许多概念都有不同的名词解释，所以在介绍Redis Sentinel之前，先对几个名词进行说明，这样便于在后面的介绍中达成一致，如表所示。
 
-![](../.gitbook/assets/image%20%28135%29.png)
+![](../.gitbook/assets/image%20%28136%29.png)
 
 Redis Sentinel是Redis的高可用实现方案，在实际的生产环境中，对提高整个系统的高可用性是非常有帮助的，本节首先会回顾主从复制模式下故障处理可能产生的问题，而后引出高可用的概念，最后重点分析Redis Sentinel的基本架构、优势，以及是如何实现高可用的。
 
@@ -26,23 +26,23 @@ Redis主从复制模式下，一旦主节点出现了故障不可达，需要人
 
 1）主节点发生故障后，客户端（client）连接主节点失败，两个从节点与主节点连接失败造成复制中断。
 
-![](../.gitbook/assets/image%20%28166%29.png)
+![](../.gitbook/assets/image%20%28167%29.png)
 
 2）如果主节点无法正常启动，需要选出一个从节点 （slave-1），对其执行slaveof no one命令使其成为新的主节点。
 
-![](../.gitbook/assets/image%20%28199%29.png)
+![](../.gitbook/assets/image%20%28200%29.png)
 
 3）原来的从节点（slave-1）成为新的主节点后，更新应用方的主节点信息，重新启动应用方。
 
-![](../.gitbook/assets/image%20%28113%29.png)
+![](../.gitbook/assets/image%20%28114%29.png)
 
 4）客户端命令另一个从节点（slave-2）去复制新的主节点（new-master）
 
-![](../.gitbook/assets/image%20%28160%29.png)
+![](../.gitbook/assets/image%20%28161%29.png)
 
 5）待原来的主节点恢复后，让它去复制新的主节点。
 
-![](../.gitbook/assets/image%20%28131%29.png)
+![](../.gitbook/assets/image%20%28132%29.png)
 
 上述处理过程就可以认为整个服务或者架构的设计不是高可用的，因为整个故障转移的过程需要人介入。考虑到这点，有些公司把上述流程自动化 了，但是仍然存在如下问题：第一，判断节点不可达的机制是否健全和标准。第二，如果有多个从节点，怎样保证只有一个被晋升为主节点。第三， 通知客户端新的主节点机制是否足够健壮。Redis Sentinel正是用于解决这些问题。
 
@@ -58,13 +58,13 @@ Redis Sentinel是一个分布式架构，其中包含若干个Sentinel节点和R
 
 如图所示，Redis Sentinel与Redis主从复制模式只是多了若干Sentinel 节点，所以Redis Sentinel并没有针对Redis节点做了特殊处理，这里是很多开发和运维人员容易混淆的。
 
-![](../.gitbook/assets/image%20%28173%29.png)
+![](../.gitbook/assets/image%20%28174%29.png)
 
 从逻辑架构上看，Sentinel节点集合会定期对所有节点进行监控，特别是对主节点的故障实现自动转移。
 
 下面以1个主节点、2个从节点、3个Sentinel节点组成的Redis Sentinel为例子进行说明，拓扑结构如图所示。
 
-![](../.gitbook/assets/image%20%28134%29.png)
+![](../.gitbook/assets/image%20%28135%29.png)
 
 整个故障转移的处理逻辑有下面4个步骤：
 
@@ -74,15 +74,15 @@ Redis Sentinel是一个分布式架构，其中包含若干个Sentinel节点和R
 
 2）每个Sentinel节点通过定期监控发现主节点出现了故障。
 
-![](../.gitbook/assets/image%20%2877%29.png)
+![](../.gitbook/assets/image%20%2878%29.png)
 
 3）多个Sentinel节点对主节点的故障达成一致，选举出 sentinel-3节点作为领导者负责故障转移。
 
-![](../.gitbook/assets/image%20%28221%29.png)
+![](../.gitbook/assets/image%20%28222%29.png)
 
 4）Sentinel领导者节点执行了故障转移，整个过程和高可用中介绍的是完全一致的，只不过是自动化完成的。
 
-![](../.gitbook/assets/image%20%2882%29.png)
+![](../.gitbook/assets/image%20%2883%29.png)
 
 5）故障转移后整个Redis Sentinel的拓扑结构图所示。
 

@@ -6,7 +6,7 @@
 
 首先需要了解Redis自身使用内存的统计数据，可通过执行info memory命令获取内存相关指标。读懂每个指标有助于分析Redis内存使用情况，下表列举出内存统计指标和对应解释。
 
-![](../.gitbook/assets/image%20%2871%29.png)
+![](../.gitbook/assets/image%20%2872%29.png)
 
 需要重点关注的指标有：used\_memory\_rss和used\_memory以及它们的比值mem\_fragmentation\_ratio。
 

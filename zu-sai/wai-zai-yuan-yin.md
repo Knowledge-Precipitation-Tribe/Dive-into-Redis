@@ -67,7 +67,7 @@ Redis使用多路复用IO模型可支撑大量连接，但是不代表可以无�
 
 客户端想成功连接上Redis服务需要操作系统和Redis的限制都通过才可以，如图所示。
 
-![](../.gitbook/assets/image%20%28179%29.png)
+![](../.gitbook/assets/image%20%28180%29.png)
 
 操作系统一般会对进程使用的资源做限制，其中一项是对进程可打开最大文件数控制，通过ulimit-n查看，通常默认1024。由于Linux系统对TCP连接也定义为一个文件句柄，因此对于支撑大量连接的Redis来说需要增大这个值，如设置ulimit-n65535，防止Too many open files错误。
 

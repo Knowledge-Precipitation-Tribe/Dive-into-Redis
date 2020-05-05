@@ -6,5 +6,5 @@ spop key
 
 spop操作可以从集合中随机弹出一个元素
 
-![](../../.gitbook/assets/image%20%2887%29.png)
+![](../../.gitbook/assets/image%20%2888%29.png)
 

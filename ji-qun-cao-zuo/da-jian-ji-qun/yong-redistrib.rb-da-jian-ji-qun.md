@@ -39,7 +39,7 @@ sudo cp /{redis_home}/src/redis-trib.rb /usr/local/bin
 # redis-trib.rb
 ```
 
-![](../../.gitbook/assets/image%20%28208%29.png)
+![](../../.gitbook/assets/image%20%28209%29.png)
 
 从redis-trib.rb的提示信息可以看出，它提供了集群创建、检查、修复、 均衡等命令行工具。这里我们关注集群创建命令，使用redis-trib.rb create命令可快速搭建集群。
 
@@ -66,11 +66,11 @@ redis-trib.rb create --replicas 1 127.0.0.1:6481 127.0.0.1:6482 127.0.0.1:6483 1
 
 --replicas参数指定集群中每个主节点配备几个从节点，这里设置为1。我们出于测试目的使用本地IP地址127.0.0.1，如果部署节点使用不同的IP地 址，redis-trib.rb会尽可能保证主从节点不分配在同一机器下，因此会重新排 序节点列表顺序。节点列表顺序用于确定主从角色，先主节点之后是从节 点。创建过程中首先会给出主从节点角色分配的计划，如下所示。
 
-![](../../.gitbook/assets/image%20%28203%29.png)
+![](../../.gitbook/assets/image%20%28204%29.png)
 
 当我们同意这份计划之后输入yes，redis-trib.rb开始执行节点握手和槽 分配操作，输出如下：
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](../../.gitbook/assets/image%20%2829%29.png)
 
 最后的输出报告说明：16384个槽全部被分配，集群创建成功。这里需 要注意给redis-trib.rb的节点地址必须是不包含任何槽/数据的节点，否则会 拒绝创建集群。
 

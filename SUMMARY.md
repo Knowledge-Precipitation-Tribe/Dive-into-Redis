@@ -4,11 +4,11 @@
 * [Redis特性](redis-te-xing.md)
 * [Redis可以做什么](redis-ke-yi-zuo-shen-me.md)
 * [下载与安装](xia-zai-yu-an-zhuang/README.md)
+  * [redis在线练习](xia-zai-yu-an-zhuang/redis-zai-xian-lian-xi.md)
   * [直接下载](xia-zai-yu-an-zhuang/zhi-jie-xia-zai.md)
   * [Docker](xia-zai-yu-an-zhuang/docker.md)
 * [登陆Redis数据库](deng-lu-redis-shu-ju-ku.md)
 * [可视化工具](ke-shi-hua-gong-ju.md)
-* [常见问题](chang-jian-wen-ti.md)
 
 ## API理解与使用
 
@@ -25,6 +25,7 @@
   * [设置并返回原值](api-li-jie-yu-shi-yong/string-zi-fu-chuan/she-zhi-bing-fan-hui-yuan-zhi.md)
   * [设置指定位置的字符](api-li-jie-yu-shi-yong/string-zi-fu-chuan/she-zhi-zhi-ding-wei-zhi-de-zi-fu.md)
   * [获取部分字符串](api-li-jie-yu-shi-yong/string-zi-fu-chuan/huo-qu-bu-fen-zi-fu-chuan.md)
+  * [设置部分字符串](api-li-jie-yu-shi-yong/string-zi-fu-chuan/she-zhi-bu-fen-zi-fu-chuan.md)
   * [字符串命令总结](api-li-jie-yu-shi-yong/string-zi-fu-chuan/zi-fu-chuan-ming-ling-zong-jie.md)
   * [使用场景](api-li-jie-yu-shi-yong/string-zi-fu-chuan/dian-xing-shi-yong-chang-jing.md)
 * [hash\(哈希\)](api-li-jie-yu-shi-yong/hash-ha-xi/README.md)

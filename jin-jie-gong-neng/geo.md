@@ -10,7 +10,7 @@ geoadd key longitude latitude member [longitude latitude member ...]
 
 longitude、latitude、member分别是该地理位置的经度、纬度、成员，下表展示5个城市的经纬度。
 
-![](../.gitbook/assets/image%20%28171%29.png)
+![](../.gitbook/assets/image%20%28172%29.png)
 
 cities:locations是上面5个城市地理位置信息的集合，现向其添加北京的地理位置信息：
 

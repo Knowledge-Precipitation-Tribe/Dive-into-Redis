@@ -2,7 +2,7 @@
 
 CacheCloud它实现多种Redis类型（Redis Standalone、Redis Sentinel、 Redis Cluster）的自动部署、解决Redis节点碎片化现象，提供完善的统计、 监控、运维功能，减少运维成本和误操作，提高机器的利用率，提供灵活的 伸缩性，可方便地接入客户端，对于Redis的开发和运维人员非常有帮助。 整体功能架构如图所示。
 
-![](../../.gitbook/assets/image%20%2837%29.png)
+![](../../.gitbook/assets/image%20%2838%29.png)
 
 CacheCloud提供的主要功能如下： 
 

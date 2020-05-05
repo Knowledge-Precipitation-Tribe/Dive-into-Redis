@@ -6,7 +6,7 @@ AOF（append only file）持久化：以独立日志的方式记录每次写命�
 
 开启AOF功能需要设置配置：appendonly yes，默认不开启。AOF文件名通过appendfilename配置设置，默认文件名是appendonly.aof。保存路径同 RDB持久化方式一致，通过dir配置指定。AOF的工作流程操作：命令写入 （append）、文件同步（sync）、文件重写（rewrite）、重启加载 （load），如图所示。
 
-![](../.gitbook/assets/image%20%28109%29.png)
+![](../.gitbook/assets/image%20%28110%29.png)
 
 流程如下：
 
@@ -70,7 +70,7 @@ AOF重写过程可以手动触发和自动触发：
 
 ### 执行流程
 
-![](../.gitbook/assets/image%20%28110%29.png)
+![](../.gitbook/assets/image%20%28111%29.png)
 
 ### 文件校验
 
