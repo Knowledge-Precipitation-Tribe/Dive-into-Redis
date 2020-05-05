@@ -1,5 +1,9 @@
 # 设置并返回原值
 
+将给定 key 的值设为 value ，并返回 key 的旧值\(old value\)。
+
+当 key 存在但不是字符串类型时，返回一个错误。
+
 ```text
 getset key value
 ```

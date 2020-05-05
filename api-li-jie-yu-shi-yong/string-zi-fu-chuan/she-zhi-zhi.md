@@ -1,5 +1,11 @@
 # 设置值
 
+将字符串值 value 关联到 key 。
+
+如果 key 已经持有其他值， SET 就覆写旧值，无视类型。
+
+对于某个原本带有生存时间（TTL）的键来说， 当 _SET_ 命令成功在这个键上执行时， 这个键原有的 TTL 将被清除。
+
 ```text
 set key value [expiration EX seconds|PX milliseconds] [NX|XX]
 ```
