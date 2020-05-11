@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Dive-into-Redis](README.md)
+* [NoSQL和传统数据库有什么区别？](nosql-he-chuan-tong-shu-ju-ku-you-shen-me-qu-bie.md)
 * [Redis特性](redis-te-xing.md)
 * [Redis可以做什么](redis-ke-yi-zuo-shen-me.md)
 * [下载与安装](xia-zai-yu-an-zhuang/README.md)
