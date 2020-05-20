@@ -26,7 +26,7 @@ master和各个release版本是生产可用的，其他分支可能是处于开�
 
 CacheCloud目录结构如下：
 
-![](../.gitbook/assets/image%20%2827%29.png)
+![](../../.gitbook/assets/image%20%2827%29.png)
 
 ### 2.初始化数据库
 
@@ -36,7 +36,7 @@ CacheCloud目录结构如下：
 
 CacheCloud项目中的online.properties文件（cachecloud-openweb/src/main/swap目录下）中包含了MySQL的配置信息以及CacheCloud项目 的启动端口（CacheCloud可以看作是一个Web项目），如表所示。
 
-![](../.gitbook/assets/image%20%2837%29.png)
+![](../../.gitbook/assets/image%20%2837%29.png)
 
 上述配置只是CacheCloud的最简配置，当项目启动后可以在后台设置更多的参数，后面会进行介绍。
 
@@ -84,7 +84,7 @@ tail –f /opt/cachecloud-web/logs/cachecloud-web.log
 
 Cachecloud启动成功后，访问http://127.0.0.1:8585/，如果出如图所示的登录界面说明启动成功，使用默认用户名admin、密码admin登录系统即可。
 
-![](../.gitbook/assets/image%20%2840%29.png)
+![](../../.gitbook/assets/image%20%2840%29.png)
 
 {% hint style="info" %}
 CacheCloud启动常见错误解决方法可以参考[http://cachecloud.github.io。](http://cachecloud.github.io。)

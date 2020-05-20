@@ -2,7 +2,7 @@
 
 ## 1.部署成本
 
-我们在第9章和第10章详细讲解了Redis Sentinel和Redis Cluster的安装、 配置、部署、运维。以Redis Cluster为例子，虽然Redis的作者开发了redistrib.rb这样的工具帮助我们快速构建和管理Redis Cluster，但是每个Redis节 点仍然需要手工配置和启动，相对来说还是比较繁琐的，而且由于是人工操 作，所以存在一定的错误率。例如作为一个Redis运维人员，管理几百上千 个Redis节点是很正常的事，如果单纯手工安装配置，既耗时又容易出错。
+我们在之前详细讲解了Redis Sentinel和Redis Cluster的安装、 配置、部署、运维。以Redis Cluster为例子，虽然Redis的作者开发了redistrib.rb这样的工具帮助我们快速构建和管理Redis Cluster，但是每个Redis节 点仍然需要手工配置和启动，相对来说还是比较繁琐的，而且由于是人工操 作，所以存在一定的错误率。例如作为一个Redis运维人员，管理几百上千 个Redis节点是很正常的事，如果单纯手工安装配置，既耗时又容易出错。
 
 ## 2.实例碎片化
 

@@ -182,13 +182,14 @@
 * [Linux配置优化](kai-fa-yun-wei-de-xian-jing/linux-pei-zhi-you-hua/README.md)
   * [内存分配控制](kai-fa-yun-wei-de-xian-jing/linux-pei-zhi-you-hua/nei-cun-fen-pei-kong-zhi.md)
 
-## Redis监控运维云平台CacheCloud
+## Redis监控运维云平台
 
-* [Redis监控运维云平台CacheCloud](redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/redis-jian-kong-yun-wei-yun-ping-tai-cachecloud.md)
-* [CacheCloud是什么](redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/cachecloud-shi-shen-me/README.md)
-  * [现有问题](redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/cachecloud-shi-shen-me/xian-you-wen-ti.md)
-  * [CacheCloud基本功能](redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/cachecloud-shi-shen-me/cachecloud-ji-ben-gong-neng.md)
-* [快速部署](redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/kuai-su-bu-shu.md)
+* [Redis监控运维云平台CacheCloud](redis-jian-kong-yun-wei-yun-ping-tai/redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/README.md)
+  * [CacheCloud是什么](redis-jian-kong-yun-wei-yun-ping-tai/redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/cachecloud-shi-shen-me/README.md)
+    * [现有问题](redis-jian-kong-yun-wei-yun-ping-tai/redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/cachecloud-shi-shen-me/xian-you-wen-ti.md)
+    * [CacheCloud基本功能](redis-jian-kong-yun-wei-yun-ping-tai/redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/cachecloud-shi-shen-me/cachecloud-ji-ben-gong-neng.md)
+  * [快速部署](redis-jian-kong-yun-wei-yun-ping-tai/redis-jian-kong-yun-wei-yun-ping-tai-cachecloud/kuai-su-bu-shu.md)
+* [redis-manager](redis-jian-kong-yun-wei-yun-ping-tai/redis-manager.md)
 * [常见问题](chang-jian-wen-ti-1.md)
 * [参考文献](can-kao-wen-xian.md)
 
