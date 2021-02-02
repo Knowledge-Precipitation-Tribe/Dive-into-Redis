@@ -10,11 +10,13 @@
   * [Docker](xia-zai-yu-an-zhuang/docker.md)
 * [登陆Redis数据库](deng-lu-redis-shu-ju-ku.md)
 * [可视化工具](ke-shi-hua-gong-ju.md)
+* [应用场景](ying-yong-chang-jing.md)
 
 ## API理解与使用
 
 * [全局命令1](api-li-jie-yu-shi-yong/quan-ju-ming-ling.md)
 * [全局命令2](api-li-jie-yu-shi-yong/quan-ju-ming-ling-2.md)
+* [数据类型](api-li-jie-yu-shi-yong/shu-ju-lei-xing.md)
 * [string\(字符串\)](api-li-jie-yu-shi-yong/string-zi-fu-chuan/README.md)
   * [设置值](api-li-jie-yu-shi-yong/string-zi-fu-chuan/she-zhi-zhi.md)
   * [获取值](api-li-jie-yu-shi-yong/string-zi-fu-chuan/huo-qu-zhi.md)
