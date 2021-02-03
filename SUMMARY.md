@@ -108,8 +108,8 @@
 ## 持久化
 
 * [持久化](chi-jiu-hua/chi-jiu-hua.md)
-* [AOF](chi-jiu-hua/aof.md)
 * [RDB](chi-jiu-hua/rdb.md)
+* [AOF](chi-jiu-hua/aof.md)
 * [问题定位与优化](chi-jiu-hua/wen-ti-ding-wei-yu-you-hua.md)
 * [多实例部署](chi-jiu-hua/duo-shi-li-bu-shu.md)
 
