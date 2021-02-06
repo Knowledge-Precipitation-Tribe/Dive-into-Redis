@@ -77,3 +77,16 @@ Master replied to PING, replication can continue...
 
 当主节点把当前的数据同步给从节点后，便完成了 、复制的建立流程。接下来主节点会持续地把写命令发送给从节点，保证主从数据一致性。
 
+## **redis replication 的核心机制**
+
+* redis 采用**异步方式**复制数据到 slave 节点，不过 redis2.8 开始，slave node 会周期性地确认自己每次复制的数据量；
+* 一个 master node 是可以配置多个 slave node 的；
+* slave node 也可以连接其他的 slave node；
+* slave node 做复制的时候，不会 block master node 的正常工作；
+* slave node 在做复制的时候，也不会 block 对自己的查询操作，它会用旧的数据集来提供服务；但是复制完成的时候，需要删除旧数据集，加载新数据集，这个时候就会暂停对外服务了；
+* slave node 主要用来进行横向扩容，做读写分离，扩容的 slave node 可以提高读的吞吐量。
+
+注意，如果采用了主从架构，那么建议必须**开启** master node 的持久化，不建议用 slave node 作为 master node 的数据热备，因为那样的话，如果你关掉 master 的持久化，可能在 master 宕机重启的时候数据是空的，然后可能一经过复制， slave node 的数据也丢了。
+
+另外，master 的各种备份方案，也需要做。万一本地的所有文件丢失了，从备份中挑选一份 rdb 去恢复 master，这样才能**确保启动的时候，是有数据的**，即使采用了后续讲解的高可用机制，slave node 可以自动接管 master node，但也可能 sentinel 还没检测到 master failure，master node 就自动重启了，还是可能导致上面所有的 slave node 数据被清空。
+
