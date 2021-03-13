@@ -89,6 +89,10 @@
   * [有序集合命令总结](api-li-jie-yu-shi-yong/zset-you-xu-ji-he/you-xu-ji-he-ming-ling-zong-jie.md)
   * [使用场景](api-li-jie-yu-shi-yong/zset-you-xu-ji-he/shi-yong-chang-jing.md)
 
+## 数据结构与对象
+
+* [简单动态字符串](shu-ju-jie-gou-yu-dui-xiang/jian-dan-dong-tai-zi-fu-chuan.md)
+
 ## 进阶功能
 
 * [慢查询分析](jin-jie-gong-neng/man-cha-xun-fen-xi/README.md)
