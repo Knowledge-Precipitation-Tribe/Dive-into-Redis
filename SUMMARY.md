@@ -92,6 +92,7 @@
 ## 数据结构与对象
 
 * [简单动态字符串](shu-ju-jie-gou-yu-dui-xiang/jian-dan-dong-tai-zi-fu-chuan.md)
+* [链表](shu-ju-jie-gou-yu-dui-xiang/lian-biao.md)
 
 ## 进阶功能
 
