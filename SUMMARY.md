@@ -93,6 +93,7 @@
 
 * [简单动态字符串](shu-ju-jie-gou-yu-dui-xiang/jian-dan-dong-tai-zi-fu-chuan.md)
 * [链表](shu-ju-jie-gou-yu-dui-xiang/lian-biao.md)
+* [字典](shu-ju-jie-gou-yu-dui-xiang/zi-dian.md)
 
 ## 进阶功能
 
