@@ -96,6 +96,7 @@
 * [字典](shu-ju-jie-gou-yu-dui-xiang/zi-dian.md)
 * [跳表](shu-ju-jie-gou-yu-dui-xiang/tiao-biao.md)
 * [整数集合](shu-ju-jie-gou-yu-dui-xiang/zheng-shu-ji-he.md)
+* [压缩列表](shu-ju-jie-gou-yu-dui-xiang/ya-suo-lie-biao.md)
 
 ## 进阶功能
 
